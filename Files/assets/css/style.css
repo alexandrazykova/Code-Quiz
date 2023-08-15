@@ -1,0 +1,26 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background: white;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  .timer {
+    text-align: end;
+  }
+  
+
+  main {
+    display: flex;
+    justify-content: space-around;
+    display: block;
+  }
+
+ 
