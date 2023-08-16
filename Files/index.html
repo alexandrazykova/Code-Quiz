@@ -6,27 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   </head>
+
   <body>
-      <div class="card timer">
-        <div class="timer-text">
-        <div class="large-font timer-count">120</div>
-        <p>seconds remaining</p>
-      </div>
-      <button class="start-button">Start</button>
+
+    <header>
+      <h1>Coding Quiz Challenge</h1>
+      <h2 class="timer">Timer</h2>
+      <div id="main"></div>
+    </header>
+      
     <main>
-      <section>
-        <div id="question">
-          <p>Questions Here</p>
-        </div>
-      </section>
-      <section>
-        <div id="choices">
-          <p>Choices here</p>
-        </div>
-              <button class="submit-button">Submit</button>
-          </div>
-        </div>
-      </section>
+        <div id="questionContainer"></div>
+        <button id="start">Start Quiz</button>
     </main>
     <script src="./assets/js/script.js"></script>
   </body>
