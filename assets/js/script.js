@@ -2,7 +2,7 @@ var timerEl = document.querySelector(".timer");
 var questionEl = document.getElementById("questionContainer");
 var startButton = document.getElementById("start");
 var mainEl = document.getElementById("main");
-
+var score = document.querySelector("#score");
 
 // Array of questions and answer options with correct answers
 var quizQuestions = [
@@ -131,13 +131,13 @@ function clearQuestion() {
   questionEl.textContent = "";
 }
 
-// timer function
+// starting the timer function
 function startTimer() {
-  // Sets timer
+  // Sets timer and displays remaining time
   timerInterval = setInterval(function () {
     timerCount--;
     timerEl.textContent = "Time remaining: " + timerCount + " seconds";
-    // Tests if time has run out
+    // Tests if time has run out, displays "time is up" message
     if (timerCount === 0) {
       clearInterval(timerInterval);
       clearQuestion();
@@ -149,3 +149,10 @@ function startTimer() {
 // button that starts the quiz
 startButton.addEventListener("click", startQuiz);
 
+/*function saveScore(score) {
+var highScores = JSON.parse(localStorage.getItem("highScores");
+}
+
+
+function renderScores () {}
+  */
