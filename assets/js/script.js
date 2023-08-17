@@ -1,8 +1,13 @@
+// Selecting HTML elements
 var timerEl = document.querySelector(".timer");
 var questionEl = document.getElementById("questionContainer");
 var startButton = document.getElementById("start");
 var mainEl = document.getElementById("main");
-var score = document.querySelector("#score");
+var score = document.querySelector(".score");
+var inputEl = document.getElementById("input-container");
+var submitButton = document.getElementById("submit");
+
+var scoreCounter = 0;
 
 // Array of questions and answer options with correct answers
 var quizQuestions = [
@@ -62,6 +67,7 @@ var quizQuestions = [
     correctAnswer: "a"
   },
 ];
+
 var timerCount = 300;
 var questionIndex = 0;
 var timerInterval;
@@ -78,7 +84,7 @@ function startQuiz() {
 // Renders questions and answer options in order from the question array
 function renderQuestion() {
   var currentQuestion = quizQuestions[questionIndex];
-  questionEl.textContent = currentQuestion.question; // displays Questions from the array
+  questionEl.textContent = currentQuestion.question; // Displays Questions from the array
 
   // Creating ul element in html document to display answer options for current question
   var answerList = document.createElement("ul");
@@ -109,6 +115,7 @@ function renderQuestion() {
 function checkAnswer(selectedAnswer, correctAnswer) {
   if (selectedAnswer === correctAnswer) {
     alert("Correct!");
+    scoreCounter++
   } else {
     alert("Incorrect! -10 seconds");
     timerCount -= 10; // subtract 10 seconds for a wrong answer
@@ -123,6 +130,7 @@ function checkAnswer(selectedAnswer, correctAnswer) {
     clearQuestion();
     questionEl.textContent = "Quiz finished!";
     clearInterval(timerInterval); // Stop the timer when quiz is finished
+    endQuiz();
   }
 }
 
@@ -131,7 +139,7 @@ function clearQuestion() {
   questionEl.textContent = "";
 }
 
-// starting the timer function
+// Starting the timer function
 function startTimer() {
   // Sets timer and displays remaining time
   timerInterval = setInterval(function () {
@@ -146,5 +154,51 @@ function startTimer() {
   }, 1000);
 }
 
-// button that starts the quiz
+// Button that starts the quiz on click
 startButton.addEventListener("click", startQuiz);
+
+// Saves user's score and initials 
+function setScore() {
+  score.textContent = scoreCounter;
+  // Saving score to localStorage
+  var storedScore = JSON.parse(localStorage.getItem("scoreCount")) || []
+  var userInput = document.getElementById("initials").value;
+  var userScoreObj = {
+    initials: userInput,
+    score: scoreCounter
+  }
+  storedScore.push(userScoreObj);
+  localStorage.setItem("scoreCount", JSON.stringify(storedScore));
+}
+
+// Get the user's score from the localStorage
+function getScore() {
+  var storedScore = local.Storage.getItem("scoreCount");
+  score.textContent = scoreCounter;
+  if (storedScore === null) {
+    scoreCounter = 0;
+  }
+  else {
+    scoreCounter = storedScore;
+  }
+  score.textContent = scoreCounter;
+}
+
+// The init function is called when the page loads 
+function init() {
+  getScore();
+}
+
+// End the quiz and render initials input
+function endQuiz() {
+  renderInitials();
+}
+
+// Render initials input
+function renderInitials() {
+  inputEl.classList.remove("hidden");
+  questionEl.classList.add("hidden");
+}
+
+// Listen for submit button for user's initials and score to be saved
+submitButton.addEventListener("click", setScore);

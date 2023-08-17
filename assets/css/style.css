@@ -23,3 +23,7 @@ main {
   right: 1rem;
   color: black;
 }
+
+.hidden {
+  display: none;
+}
