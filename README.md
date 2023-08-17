@@ -15,7 +15,9 @@ IMPORTANT: this project is incomplete and expected to be finished by August 19, 
 The project is structured as follows:
 
 index.html: Contains the main HTML structure of the quiz application.
+
 style.css: Includes the styling for the quiz interface.
+
 script.js: Contains JavaScript code responsible for quiz logic and user interaction.
 
 ## Getting Started
@@ -33,7 +35,7 @@ You can view previous high scores by clicking the "Check previous score" link.
 
 ## Screenshot
 
-![screenshot]("assets/images/code-quiz.png")
+![screenshot](/assets/images/code-quiz.png)
 
 
 

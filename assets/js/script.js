@@ -148,11 +148,3 @@ function startTimer() {
 
 // button that starts the quiz
 startButton.addEventListener("click", startQuiz);
-
-/*function saveScore(score) {
-var highScores = JSON.parse(localStorage.getItem("highScores");
-}
-
-
-function renderScores () {}
-  */
