@@ -22,7 +22,7 @@ script.js: Contains JavaScript code responsible for quiz logic and user interact
 
 ## Getting Started
 
-Clone the repository to your local machine or download zip file or access [here]
+Clone the repository to your local machine or download zip file or access the link [here](https://alexandrazykova.github.io/Code-Quiz/)
 
 ## Usage
 
