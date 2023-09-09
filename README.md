@@ -35,7 +35,8 @@ You can view previous high scores by clicking the "Check previous score" link.
 
 ## Screenshot
 
-![screenshot](/assets/images/code-quiz.png)
+![screenshot](/assets/images/img%20quiz.png)
+![screenshot](./assets/images/quiz%20img.png)
 
 
 
