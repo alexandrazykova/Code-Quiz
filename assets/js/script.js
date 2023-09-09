@@ -68,7 +68,7 @@ var quizQuestions = [
   },
 ];
 
-var timerCount = 300;
+var timerCount = 100;
 var questionIndex = 0;
 var timerInterval;
 
